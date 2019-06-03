@@ -1,25 +1,25 @@
-package pl.edu.wszib.projektk.ksiazki;
+package pl.edu.wszib.projektk.book;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "lista_ksiazek")
+@Table(name = "selected_books")
 
-public class WybranaKsiazka {
+public class SelectedBook {
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    private String ksiazka;
+    private String book;
     private Date ctime;
 
-    public WybranaKsiazka() {
+    public SelectedBook() {
     }
 
-    public WybranaKsiazka(String ksiazka, Date ctime) {
-        this.ksiazka = ksiazka;
+    public SelectedBook(String book, Date ctime) {
+        this.book = book;
         this.ctime = ctime;
     }
 
@@ -31,12 +31,12 @@ public class WybranaKsiazka {
         this.id = id;
     }
 
-    public String getKsiazka() {
-        return ksiazka;
+    public String getBook() {
+        return book;
     }
 
-    public void setKsiazka(String ksiazka) {
-        this.ksiazka = ksiazka;
+    public void setBook(String book) {
+        this.book = book;
     }
 
     public Date getCtime() {
