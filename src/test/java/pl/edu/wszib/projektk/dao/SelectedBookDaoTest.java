@@ -54,7 +54,7 @@ public class SelectedBookDaoTest {
     }
 
     @Test
-    public void testFindBook() {
+    public void testFindByBook() {
 
         List<SelectedBook> selectedBooks = selectedBookDao.findByBook("Wiedźmin, Andrzej Sapkowski");
         System.out.println("--------------");
