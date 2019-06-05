@@ -1,3 +1,5 @@
+
+
 package pl.edu.wszib.projektk.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,9 +24,11 @@ public class DataController {
         Iterable<SelectedBook> selectedBooks = selectedBookDao.findAll();
 
         model.addAttribute("title", title);
-        model.addAttribute("books", selectedBooks);
+        model.addAttribute("selectedBooks", selectedBooks);
 
         return "data";
 
     }
 }
+
+

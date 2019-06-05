@@ -28,16 +28,16 @@ public class SelectedBookController {
     SelectedBookDao selectedBookDao;
 
     @GetMapping({"/select", "/select/{book}"})
-    public String selecteBookPage(@PathVariable(required = false) String book, Model model) {
+    public String selectBookPage(@PathVariable(required = false) String book, Model model) {
 
         if (!StringUtils.isEmpty(book)) {
             selectedBookDao.save(new SelectedBook(book, new Date()));
         }
 
         String[][] books = {
-                {"jedna ksiazka, autor", "druga ksiazka, autor"},
-                {"trzecia i autor", "czwarta ksiazka, autor"},
-                {"piata i autor", "szosta ksiazka, autor"}
+                {"jedna", "druga"},
+                {"trzecia", "czwarta"},
+                {"piata", "szosta"}
         };
 
         model.addAttribute("title", title);
@@ -45,17 +45,6 @@ public class SelectedBookController {
         return "select";
     }
 
-    @GetMapping("/stat")
-    public String statPage() {
-        return "stat";
-    }
 
-    @GetMapping("/data")
-    public String dataPage(Model model) {
-        Iterable<SelectedBook> selectedBooks = selectedBookDao.findAll();
-
-        return "data";
-
-        }
 
     }
