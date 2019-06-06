@@ -3,6 +3,7 @@ package pl.edu.wszib.projektk.dao;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -16,25 +17,25 @@ import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SelectedBookDaoTest {
+public class SelectedBooksDaoTest {
 
-    public static final String Book1 = "Wiedźmin, Andrzej Sapkowski";
-    public static final String Book2 = "Ja diablica, Katarzyna Miszczuk";
+    public static final String Book1 = "Book1";
+    public static final String Book2 = "Book2";
 
     @Autowired
-    SelectedBookDao selectedBookDao;
+    SelectedBooksDao selectedBooksDao;
 
 
     @Before
     public void setUp() throws Exception {
-        SelectedBook selectedBook1 = new SelectedBook("Wiedźmin, Andrzej Sapkowski",new Date());
-        SelectedBook selectedBook2 = new SelectedBook("Ja diablica, Katarzyna Miszczuk",new Date());
+        SelectedBook selectedBook1 = new SelectedBook(Book1, new Date());
+        SelectedBook selectedBook2 = new SelectedBook(Book2, new Date());
 
         assertNull(selectedBook1.getId());
         assertNull(selectedBook2.getId());
 
-        selectedBookDao.save(selectedBook1);
-        selectedBookDao.save(selectedBook2);
+        selectedBooksDao.save(selectedBook1);
+        selectedBooksDao.save(selectedBook2);
 
         assertNotNull(selectedBook1.getId());
         assertNotNull(selectedBook2.getId());
@@ -45,7 +46,7 @@ public class SelectedBookDaoTest {
     @Test
     public void testFetchAllData() {
 
-    Iterable<SelectedBook> selectedBooks = selectedBookDao.findAll();
+    Iterable<SelectedBook> selectedBooks = selectedBooksDao.findAll();
     int counter = 0;
     for (SelectedBook selectedBook : selectedBooks) {
         counter++;
@@ -56,9 +57,9 @@ public class SelectedBookDaoTest {
     @Test
     public void testFindByBook() {
 
-        List<SelectedBook> selectedBooks = selectedBookDao.findByBook("Wiedźmin, Andrzej Sapkowski");
+        List<SelectedBook> selectedBooks = selectedBooksDao.findByBook(Book1);
         System.out.println("--------------");
-        assertEquals("Wiedźmin, Andrzej Sapkowski", selectedBooks.get(0).getBook());
+        assertEquals(Book1, selectedBooks.get(0).getBook());
     }
 
 }

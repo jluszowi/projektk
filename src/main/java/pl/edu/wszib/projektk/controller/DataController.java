@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import pl.edu.wszib.projektk.book.SelectedBook;
-import pl.edu.wszib.projektk.dao.SelectedBookDao;
+import pl.edu.wszib.projektk.dao.SelectedBooksDao;
 
 @Controller
 public class DataController {
@@ -17,11 +17,11 @@ public class DataController {
     private String title;
 
     @Autowired
-    SelectedBookDao selectedBookDao;
+    SelectedBooksDao selectedBooksDao;
 
     @GetMapping("/data")
-    public String dataPage(Model model) {
-        Iterable<SelectedBook> selectedBooks = selectedBookDao.findAll();
+    public String DataPage(Model model) {
+        Iterable<SelectedBook> selectedBooks = selectedBooksDao.findAll();
 
         model.addAttribute("title", title);
         model.addAttribute("selectedBooks", selectedBooks);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="pl">
 <head>
     <meta charset="Windows-88592">
     <title th:text="${title}"></title>
@@ -10,12 +10,12 @@
 
     <table>
         <tr th:each="booksRow : ${books}">
-            <td with="200px" height="80px"
+            <td width="200px" height="80px"
                 th:each="book : ${booksRow}"
-                th:attr="bgcolor=${yellow}"
+                th:attr="bgcolor=yellow"
                 th:text="${book}"
-                th:onclick="'location.href= \'' + @{/select/{c}(c=${book})} + ' \' '"/>
-            </td>
+                th:onclick="'location.href= \'' + @{/select/{c}(c=${book})} + ' \' '"
+            />
         </tr>
     </table>
 

@@ -8,7 +8,6 @@ import java.util.Date;
 
 public class SelectedBook {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -24,14 +23,17 @@ public class SelectedBook {
     }
 
     public Integer getId() {
+
         return id;
     }
 
     public void setId(Integer id) {
+
         this.id = id;
     }
 
     public String getBook() {
+
         return book;
     }
 
@@ -40,10 +42,12 @@ public class SelectedBook {
     }
 
     public Date getCtime() {
+
         return ctime;
     }
 
     public void setCtime(Date ctime) {
+
         this.ctime = ctime;
     }
 }

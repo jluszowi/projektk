@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="pl">
 <head>
     <meta charset="Windows-88592">
     <title th:text="${title}"></title>
 </head>
 <body>
 
-    <h1 th:text="${title}"></h1>
-
     <table>
         <tr>
-            <th width="100px">ID</th>
-            <th width="100px">Book</th>
-            <th width="100px">Data</th>
+            <th width="50px">Id</th>
+            <th width="200px">Book</th>
+            <th width="200px">Data</th>
         </tr>
+
         <tr th:each="selectedBook : ${selectedBooks}">
-            <td th: text="${selectedBook.id}"></td>
-            <td th: text="${selectedBook.book}"></td>
-            <td th: text="${selectedBook.ctime}"></td>
+            <td th:text="${selectedBook.id}"></td>
+            <td th:text="${selectedBook.book}"></td>
+            <td th:text="${selectedBook.ctime}"></td>
         </tr>
 
     </table>
