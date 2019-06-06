@@ -23,8 +23,8 @@
             labels: [[${dataMap.keySet()}]],
             datasets: [
                 {
-                    label: "Population (millions)",
-                    backgroundColor: ["green"],
+                    label: "Wybrało osób",
+                    backgroundColor: ["green", "red", "blue", "yellow", "gray", "purple", "orange", "lightblue"],
                     data: [[${dataMap.values()}]]
                 }
             ]
@@ -40,6 +40,9 @@
     });
 
 </script>
+
+<a href="/select"><input type="button" value="Wybór książek"/></a>
+<a href="/data"><input type="button" value="Dane"/></a>
 
 </body>
 </html>

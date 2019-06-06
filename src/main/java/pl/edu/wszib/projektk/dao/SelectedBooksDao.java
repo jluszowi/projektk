@@ -2,8 +2,6 @@ package pl.edu.wszib.projektk.dao;
 
 import org.springframework.data.repository.CrudRepository;
 import pl.edu.wszib.projektk.book.SelectedBook;
-
-
 import java.util.List;
 
 public interface SelectedBooksDao extends CrudRepository<SelectedBook, Integer> {

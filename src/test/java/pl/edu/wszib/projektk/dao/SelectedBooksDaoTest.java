@@ -3,16 +3,12 @@ package pl.edu.wszib.projektk.dao;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import pl.edu.wszib.projektk.book.SelectedBook;
-
-
 import java.util.Date;
 import java.util.List;
-
 import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
@@ -24,7 +20,6 @@ public class SelectedBooksDaoTest {
 
     @Autowired
     SelectedBooksDao selectedBooksDao;
-
 
     @Before
     public void setUp() throws Exception {
@@ -61,5 +56,4 @@ public class SelectedBooksDaoTest {
         System.out.println("--------------");
         assertEquals(Book1, selectedBooks.get(0).getBook());
     }
-
 }

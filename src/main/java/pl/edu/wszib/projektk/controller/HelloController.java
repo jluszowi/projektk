@@ -15,5 +15,4 @@ public class HelloController {
     public String testpage(){
         return "To jest test!!!" + HelloController.class.getCanonicalName();
     }
-
 }

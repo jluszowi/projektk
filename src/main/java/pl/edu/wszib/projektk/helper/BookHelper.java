@@ -1,4 +1,3 @@
-
 package pl.edu.wszib.projektk.helper;
 
 import javax.swing.text.html.StyleSheet;

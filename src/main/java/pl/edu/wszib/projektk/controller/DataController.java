@@ -1,5 +1,3 @@
-
-
 package pl.edu.wszib.projektk.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +25,6 @@ public class DataController {
         model.addAttribute("selectedBooks", selectedBooks);
 
         return "data";
-
     }
 }
 

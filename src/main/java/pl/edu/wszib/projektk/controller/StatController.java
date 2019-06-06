@@ -1,4 +1,3 @@
-
 package pl.edu.wszib.projektk.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import pl.edu.wszib.projektk.book.SelectedBook;
 import pl.edu.wszib.projektk.dao.SelectedBooksDao;
 import pl.edu.wszib.projektk.helper.BookHelper;
-
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -26,7 +24,6 @@ public class StatController {
     SelectedBooksDao selectedBooksDao;
 
     @GetMapping("/stat")
-//    public String statPage(Model model) {
 
     public  String stat(@PathVariable(required = false) String book, Model model) {
         Iterable<SelectedBook> selectedBooks = selectedBooksDao.findAll();
@@ -43,6 +40,5 @@ public class StatController {
 
         return "stat";
     }
-
 }
 

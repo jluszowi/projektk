@@ -10,14 +10,20 @@
 
     <table>
         <tr th:each="booksRow : ${books}">
-            <td width="200px" height="80px"
+            <td width="300px" height="150px"
                 th:each="book : ${booksRow}"
                 th:attr="bgcolor=yellow"
                 th:text="${book}"
                 th:onclick="'location.href= \'' + @{/select/{c}(c=${book})} + ' \' '"
             />
         </tr>
+
     </table>
+
+    <a href="/data"><input type="button" value="Dane"/></a>
+    <a href="/stat"><input type="button" value ="Statystyka"/></a>
+
+
 
 </body>
 </html>
